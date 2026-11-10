@@ -1,0 +1,144 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chat Folders · Product concept</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fcfaf6;color:#292720;font:14px system-ui,sans-serif}button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}button{background:#fffdf9;border:1px solid #ded8cd;border-radius:8px;padding:9px 13px}button:hover{background:#f3ebe2}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #a84c35;outline-offset:2px}header{height:62px;border-bottom:1px solid #e6e0d6;display:flex;align-items:center;justify-content:space-between;padding:0 24px}.brand{font:24px Georgia}.mark{color:#ad553e;margin-right:8px}.muted,small{color:#6b6458}.shell{display:grid;grid-template-columns:232px minmax(0,1fr) minmax(280px,29%);min-height:calc(100vh - 62px)}aside{background:#f4f0e8;padding:24px 14px;border-right:1px solid #e6e0d6}nav button{display:flex;width:100%;border:1px solid transparent;background:transparent;text-align:left;justify-content:space-between;margin-bottom:3px}.active{background:#eae1d5!important}.drop{border:1px dashed #ad553e!important;background:#f7e2d5!important}.label{display:flex;align-items:center;justify-content:space-between;margin:25px 8px 7px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#6b6458}.label button{padding:2px 7px}main{padding:32px clamp(18px,4vw,56px)}h1,h2{font-family:Georgia;font-weight:400;margin:10px 0}h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.045em}h2{font-size:29px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:#99452f}.guide{background:#f6e8dc;border:1px solid #e9d6c6;border-radius:14px;padding:17px;margin-bottom:27px}.guide p{margin:7px 0 12px}.primary{background:#a64c35;color:white;border-color:#a64c35}.primary:hover{background:#8e3f2a}.toolbar{display:flex;gap:8px;margin:23px 0 18px;flex-wrap:wrap}.toolbar input{min-width:150px;flex:1;background:#fffdf9;border:1px solid #ded8cd;border-radius:8px;padding:10px 12px}.row{display:flex;align-items:center;gap:9px;border-bottom:1px solid #e6e0d6;padding:5px 0}.row.selected{background:#f4eee5;border-radius:9px}.chat{border:0;background:transparent;text-align:left;flex:1;min-width:0}.chat strong,.chat small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat small{margin-top:4px}.grip{color:#8c8072;padding-left:8px;cursor:grab}.move{max-width:108px;background:#fcfaf6;border:1px solid #ded8cd;border-radius:7px;padding:6px;margin-right:5px}.detail{border-left:1px solid #e6e0d6;padding:32px 23px;background:#fffdf9}.bubble{background:#f3eee6;padding:13px;border-radius:12px;margin:24px 0}.detail p{line-height:1.65}.chip{display:inline-block;background:#eee6d9;padding:4px 8px;border-radius:12px;font-size:11px}dialog{border:1px solid #ded8cd;border-radius:16px;background:#fcfaf6;color:inherit;width:min(470px,94vw);padding:25px}dialog::backdrop{background:#33271e66}dialog input[type=text]{width:100%;padding:10px;margin:10px 0;border:1px solid #ded8cd;border-radius:7px}dialog label{display:block;margin:12px 0}.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}#toast{position:fixed;bottom:18px;right:18px;background:#312922;color:#fff;padding:10px 15px;border-radius:9px;z-index:2}#toast button{margin-left:10px;padding:4px 8px}.empty{padding:20px 0;color:#6b6458}@media(max-width:950px){.shell{grid-template-columns:190px minmax(0,1fr)}.detail{grid-column:2;border-top:1px solid #e6e0d6}}@media(max-width:590px){header{padding:0 12px}.shell{display:block}aside{padding:12px;border-right:0;border-bottom:1px solid #e6e0d6}nav{display:flex;flex-wrap:wrap;gap:3px}nav button{width:auto;gap:8px;padding:5px 8px}.label{margin:8px}.detail{border-left:0}main{padding:20px 12px}.guide{margin-bottom:16px}}
+
+body{background:#fff;color:#242424}.shell{grid-template-columns:260px minmax(0,1fr);min-height:100vh}aside{background:#fafafa;border-color:#e5e5e5;padding:12px}.desktop-nav button{font-size:15px;padding:9px 11px}.desktop-nav button:first-child{background:#e8e8e8}.traffic{display:flex;gap:7px;padding:4px 3px 16px}.traffic i{width:11px;height:11px;border-radius:50%;background:#ff6059}.traffic i:nth-child(2){background:#ffbf2f}.traffic i:nth-child(3){background:#29c74e}main{width:100%;max-width:970px;margin:auto;align-self:start}.detail{grid-column:2;border-left:0;border-top:1px solid #eee;max-width:860px;width:calc(100% - 48px);margin:0 auto}.home{text-align:center;padding:clamp(40px,12vh,120px) 0 24px}.home h1{font-size:clamp(32px,4vw,54px);margin-bottom:24px}.composer{text-align:left;border:1px solid #ddd;border-radius:16px;min-height:100px;padding:16px;background:white;box-shadow:0 6px 20px #00000007}.composer input{border:0;width:100%;padding:4px;background:none}.homebar{display:flex;justify-content:space-between;align-items:center;margin:9px 0 18px;gap:8px}.homebar select{background:white;border:0;padding:8px}.guide{background:#fff8f3}.label{letter-spacing:0;text-transform:none;font-size:12px}.active{background:#eaeaea!important}.desktop-note{margin:16px 8px}.home[hidden],.library[hidden],.detail[hidden]{display:none}@media(max-width:590px){.shell{display:block}.detail{width:100%}.desktop-nav button{font-size:13px}.home{padding-top:30px}}
+</style>
+<div class="shell"><aside aria-label="Chat organization"><div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+<nav class="desktop-nav" aria-label="Desktop navigation"><button id="homeBtn">＋ &nbsp; New</button><button id="searchBtn">⌕ &nbsp; Search</button><button id="projectBtn">▣ &nbsp; Projects</button></nav>
+<div class="label">Pinned</div><nav id="projects" aria-label="Pinned projects"></nav>
+<div class="label">Folders <button id="new" aria-label="Create folder">+</button></div><nav id="folders" aria-label="Folders"></nav>
+<div class="label"><span id="recentLabel">Recents</span></div><nav id="recents" aria-label="Recent chats"></nav><nav id="views" aria-label="Chat views"></nav>
+<p class="muted desktop-note"><small>Independent prototype · Fictional chats</small></p><button id="restart">↻ Reset demo</button></aside>
+<main><section class="home" id="home"><div class="eyebrow">Desktop concept</div><h1><span class="mark">✳</span>Coffee and Claude time?</h1><div class="composer"><input aria-label="Sample composer" placeholder="Type / for skills" readonly><p class="muted">＋</p></div><div class="homebar"><select id="picker" aria-label="Browse a project or folder"></select><small>Sample composer</small></div></section>
+<section class="guide" aria-label="Guided demo"><div class="eyebrow" id="step"></div><p id="instruction"></p><button id="advance" class="primary"></button></section>
+<div class="library" id="library"><div class="eyebrow">Conversation library</div><h1 id="heading"></h1><p class="muted" id="subtitle"></p><div class="toolbar"><input id="search" type="search" aria-label="Search all chats" placeholder="Search all chats…"><button id="suggest">✧ Suggest folders</button></div><div id="results"></div></div></main>
+<section class="detail" id="detail" aria-label="Chat preview"></section></div>
+<dialog id="modal"><form id="form"></form></dialog><div id="toast" role="status" hidden></div>
+<script>
+const byId=id=>document.getElementById(id);
+const seed={
+ folders:[{id:'career',name:'Home planning'},{id:'writing',name:'Writing'},{id:'life',name:'Everyday'}],
+ chats:[
+ {id:'balcony',title:'Small balcony garden ideas',prompt:'What can I grow on a small, partly shaded balcony?',reply:'Start with a few containers of mint, parsley, and leafy greens. Check how much direct sun the balcony gets before choosing more plants.',date:'Today'},
+ {id:'interview',title:'Workshop agenda brainstorm',prompt:'Help me outline a workshop for a volunteer group.',reply:'Start with a quick check-in, then give everyone ten minutes to write down ideas before discussing them together.',date:'Today',project:'Community workshop'},
+ {id:'coffee',title:'Balcony watering schedule',prompt:'How often should I water container herbs?',reply:'Check the top inch of soil before watering and adjust for warmer days.',date:'Yesterday'},
+ {id:'portfolio',title:'Newsletter intro rewrite',prompt:'Can we tighten the opening of my newsletter?',reply:'Open with the most interesting detail and give readers a reason to keep going.',date:'Yesterday',folder:'writing'},
+ {id:'market',title:'Saturday market ideas',prompt:'Help me plan a slow Saturday near a farmers market.',reply:'Pick one market as your anchor, then leave time for a walk and a café nearby.',date:'Monday'},
+ {id:'groceries',title:'Weeknight grocery plan',prompt:'Plan three dinners around the same vegetables.',reply:'Use the same greens in a rice bowl, an omelet, and a quick noodle soup.',date:'Monday',folder:'life'},
+ {id:'bike',title:'Bike tune-up checklist',prompt:'What should I check before my first ride this spring?',reply:'Check tire pressure, brakes, and chain lubrication.',date:'Monday'},
+ {id:'soup',title:'Freezer-friendly soup ideas',prompt:'What soups freeze well?',reply:'Try lentil or tomato soup. Freeze in single portions.',date:'Last week'},
+ {id:'books',title:'Neighborhood book swap',prompt:'How could we host a small book swap?',reply:'Set a date and invite each neighbor to bring two books.',date:'Last week'},
+ {id:'photos',title:'Sort vacation photos',prompt:'How can I pick a few photos to print?',reply:'Start with one favorite from each day.',date:'Last week'},
+ {id:'lamp',title:'Reading lamp options',prompt:'What should I look for in a reading lamp?',reply:'Look for an adjustable shade and warm light.',date:'Last week'},
+ {id:'cv',title:'Entryway storage ideas',prompt:'How can I make better use of a narrow entryway?',reply:'Try wall hooks and a shallow shoe rack to keep the floor clear.',date:'Last week',folder:'career'}
+ ]};
+const clone=()=>JSON.parse(JSON.stringify(seed));
+const key='chat-folders-neutral-v2';
+let data=clone();
+try{const saved=JSON.parse(localStorage.getItem(key));if(saved?.chats&&saved?.folders)data=saved}catch{}
+let view='home',selected='balcony',step=0,undo=null,toastTimer;
+const search=byId('search'),modal=byId('modal'),form=byId('form');
+function save(){try{localStorage.setItem(key,JSON.stringify(data))}catch{}}
+function node(tag,content,cls){const el=document.createElement(tag);if(content)el.textContent=content;if(cls)el.className=cls;return el}
+function folderName(id){return data.folders.find(f=>f.id===id)?.name||'Unfiled'}
+function choose(id){view=id;search.value='';render()}
+function target(id,name,count,drop){
+ const button=node('button',name,view===id?'active':'');button.type='button';
+ if(view===id)button.setAttribute('aria-current','true');
+ button.append(node('small',String(count)));button.onclick=()=>choose(id);
+ if(drop){
+ button.ondragover=e=>{if(e.dataTransfer.types.includes('application/x-chat-id')){e.preventDefault();e.dataTransfer.dropEffect='move';button.classList.add('drop')}};
+ button.ondragleave=()=>button.classList.remove('drop');
+ button.ondrop=e=>{e.preventDefault();button.classList.remove('drop');move(e.dataTransfer.getData('application/x-chat-id'),id==='unfiled'?'':id)};
+ }return button
+}
+function notify(message,action){
+ clearTimeout(toastTimer);undo=action;const toast=byId('toast');toast.replaceChildren(document.createTextNode(message));toast.hidden=false;
+ if(action){const button=node('button','Undo');button.onclick=()=>{const restore=undo;undo=null;toast.hidden=true;restore?.()};toast.append(button)}
+ toastTimer=setTimeout(()=>{toast.hidden=true;undo=null},7500)
+}
+function move(id,folder){
+ const chat=data.chats.find(c=>c.id===id);if(!chat||folder===(chat.folder||'')||(folder&&!data.folders.some(f=>f.id===folder)))return;
+ const old=chat.folder;chat.folder=folder;selected=id;
+ if(step===0&&id==='balcony'&&folder==='career'){step=1;if(view==='home')view='career'}
+ save();render();notify(folder?'Moved to '+folderName(folder):'Moved to Unfiled',()=>{chat.folder=old;save();render()})
+}
+const guide=[
+ ['01 / 03 · Tidy your backlog','Start with the chats already in Recents. Drag “Small balcony garden ideas” from Recents into Home planning, or use the guided button.','Move it for me'],
+ ['02 / 03 · Find it again','Search across folders and Projects. Try “balcony” and notice the folder on each result.','Search balcony'],
+ ['03 / 03 · Sort several at once','Review optional suggestions for the rest of your backlog. Apply only the moves you want.','Review suggestions'],
+ ['Demo complete','You filed a chat, found it again, and reviewed suggestions. Keep exploring or reset to replay.','Show all chats']
+];
+function renderGuide(){const [label,hint,action]=guide[step];byId('step').textContent=label;byId('instruction').textContent=hint;byId('advance').textContent=action}
+function render(){
+ const chats=data.chats;
+ byId('home').hidden=view!=='home';byId('library').hidden=view==='home';byId('detail').hidden=view==='home';
+ const picker=byId('picker');
+ picker.replaceChildren(new Option('Project or folder',''),new Option('Community workshop','project'),...data.folders.map(f=>new Option(f.name,f.id)));
+ picker.onchange=()=>{if(picker.value)choose(picker.value)};
+ const unfiled=chats.filter(chat=>!chat.folder);
+ byId('recentLabel').textContent='Recents · '+unfiled.length+' unfiled';
+ byId('recents').replaceChildren(...unfiled.map(chat=>{
+ const button=node('button','◯  '+chat.title);button.draggable=true;
+ button.ondragstart=e=>{e.dataTransfer.setData('application/x-chat-id',chat.id);e.dataTransfer.effectAllowed='move'};
+ button.onclick=()=>{selected=chat.id;choose('all')};return button
+ }));
+ byId('views').replaceChildren(target('all','◫  All chats',chats.length),target('unfiled','◌  Unfiled',chats.filter(c=>!c.folder).length,true));
+ byId('folders').replaceChildren(...data.folders.map(f=>target(f.id,'▱  '+f.name,chats.filter(c=>c.folder===f.id).length,true)));
+ byId('projects').replaceChildren(target('project','◇  Community workshop',chats.filter(c=>c.project).length));
+ const query=search.value.trim().toLowerCase();
+ const visible=chats.filter(c=>query?[c.title,c.prompt,c.reply,c.project,folderName(c.folder)].some(v=>v?.toLowerCase().includes(query)):view==='all'||(view==='unfiled'?!c.folder:view==='project'?c.project:c.folder===view));
+ byId('heading').textContent=query?'Search results':view==='all'?'All chats':view==='unfiled'?'Unfiled':view==='project'?'Community workshop':folderName(view);
+ byId('subtitle').textContent=visible.length+' '+(visible.length===1?'conversation':'conversations')+(query?' across the demo workspace':'');
+ byId('results').replaceChildren(...visible.map(row));if(!visible.length)byId('results').append(node('p',query?'No chats match this search. Try a different term.':'No conversations here yet. Move a chat here to get started.','empty'));
+ const c=chats.find(item=>item.id===selected);
+ const detail=byId('detail');
+ detail.replaceChildren(node('div','Chat preview','eyebrow'),node('h2',c.title),node('span',folderName(c.folder)+(c.project?' · Project: '+c.project:''),'chip'),node('p',c.prompt,'bubble'),node('div','Sample response','eyebrow'),node('p',c.reply));
+ detail.append(node('small','Independent concept · Sample conversations'));
+ renderGuide()
+}
+function row(c){
+ const line=node('div','',c.id===selected?'row selected':'row');line.draggable=true;
+ line.ondragstart=e=>{e.dataTransfer.setData('application/x-chat-id',c.id);e.dataTransfer.effectAllowed='move'};
+ const grip=node('span','⠿','grip');grip.setAttribute('aria-hidden','true');
+ const open=node('button','','chat');open.append(node('strong',c.title),node('small',c.date+' · '+folderName(c.folder)+(c.project?' · '+c.project:'')));open.onclick=()=>{selected=c.id;render();[...document.querySelectorAll('.chat')].find(button=>button.firstChild.textContent===c.title)?.focus()};
+ const select=node('select','','move');select.setAttribute('aria-label','Move '+c.title);select.append(new Option('Move…','',true,true));select.options[0].disabled=true;
+ for(const f of [{id:'',name:'Unfiled'},...data.folders])if(f.id!==(c.folder||''))select.append(new Option(f.name,'folder:'+f.id));
+ select.onchange=()=>move(c.id,select.value.slice(7));line.append(grip,open,select);return line
+}
+function dialog(title,copy,label,submit){
+ form.replaceChildren(node('h2',title),node('p',copy,'muted'));
+ const actions=node('div','','actions');const cancel=node('button','Cancel');cancel.type='button';cancel.onclick=()=>modal.close();
+ const apply=node('button',label,'primary');apply.type='submit';actions.append(cancel,apply);form.append(actions);
+ form.onsubmit=e=>{e.preventDefault();submit(new FormData(form))};return actions
+}
+byId('new').onclick=()=>{
+ const actions=dialog('New folder','Give this group of chats a short name.','Create folder',fields=>{
+ const name=fields.get('name').trim();if(!name||data.folders.some(f=>f.name.toLowerCase()===name.toLowerCase())){input.setCustomValidity('Enter a new, unique folder name.');input.reportValidity();return}
+ const id='folder-'+Date.now();data.folders.push({id,name});save();modal.close();choose(id)
+ });
+ const input=node('input');input.type='text';input.name='name';input.required=true;input.maxLength=32;input.placeholder='Folder name';input.setAttribute('aria-label','Folder name');input.oninput=()=>input.setCustomValidity('');form.insertBefore(input,actions);modal.showModal();input.focus()
+};
+function suggestions(){
+ const proposed=[['coffee','career','Home planning','A care plan for container plants.'],['market','weekend','Weekend plans','A local outing and itinerary.']].filter(([id,folder])=>data.chats.find(c=>c.id===id).folder!==folder);
+ const actions=dialog('Suggested folders','Simulated suggestions from sample conversations. Choose which moves to apply.','Apply selected',fields=>{
+ const chosen=proposed.filter(([id])=>fields.has(id));
+ const before=JSON.stringify(data);
+ for(const [id,folder,name] of chosen){if(!data.folders.some(f=>f.id===folder)){const existing=data.folders.find(f=>f.name.toLowerCase()===name.toLowerCase());if(existing){data.chats.find(c=>c.id===id).folder=existing.id;continue}data.folders.push({id:folder,name})}data.chats.find(c=>c.id===id).folder=folder}
+ if(step===2)step=3;save();modal.close();render();
+ if(chosen.length)notify(chosen.length+' '+(chosen.length===1?'chat moved':'chats moved'),()=>{data=JSON.parse(before);save();render()})
+ });
+ for(const [id,folder,name,reason] of proposed){const label=node('label');const box=node('input');box.type='checkbox';box.name=id;box.checked=true;label.append(box,document.createTextNode(' '+data.chats.find(c=>c.id===id).title+' → '+name+' '),node('small',reason));form.insertBefore(label,actions)}
+ if(!proposed.length)form.insertBefore(node('p','All sample suggestions have been applied.'),actions);
+ modal.showModal()
+}
+search.oninput=()=>{if(step===1&&search.value.trim().toLowerCase()==='balcony')step=2;render()};
+byId('suggest').onclick=suggestions;
+byId('advance').onclick=()=>{if(step===0){if(data.chats.find(c=>c.id==='balcony').folder==='career'){step=1;choose('career')}else move('balcony','career')}else if(step===1){view='all';search.value='balcony';search.oninput();search.focus()}else if(step===2)suggestions();else choose('all')};
+byId('restart').onclick=()=>{clearTimeout(toastTimer);byId('toast').hidden=true;undo=null;data=clone();step=0;selected='balcony';save();choose('home')};
+byId('homeBtn').onclick=()=>choose('home');
+byId('projectBtn').onclick=()=>choose('project');
+byId('searchBtn').onclick=()=>{choose('all');search.focus()};
+render();
+</script></html>
